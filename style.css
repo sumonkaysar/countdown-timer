@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Days+One&family=Handlee&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(45deg, #aaa, #ccc, #eee);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+#timer-title {
+  margin-bottom: 50px;
+}
+
+.timer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+.counter {
+  text-align: center;
+  background: #005aff;
+  box-shadow: 0 2px 5px 1px #777;
+  border-radius: 5px 5px 0 0;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.counter:nth-child(2) {
+  background: #a515ff;
+}
+
+.counter:nth-child(3) {
+  background: gold;
+}
+
+.counter:last-child {
+  background: #f22;
+}
+
+.counter::before,
+.counter::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  background: #000;
+  border-radius: 3px;
+  top: -4%;
+  left: 25%;
+  z-index: 9999;
+}
+
+.counter::after {
+  left: initial;
+  right: 25%;
+}
+
+.counter span {
+  background: #fff;
+  display: block;
+  color: #005aff;
+  padding: 12px 0 5px 0;
+  font-size: 12px;
+  border-radius: 5px 5px 0 0;
+  font-family: "Days One", sans-serif;
+  font-weight: 600;
+}
+
+.counter:nth-child(2) span:first-child {
+  color: #a515ff;
+}
+
+.counter:nth-child(3) span:first-child {
+  color: gold;
+}
+
+.counter:last-child span:first-child {
+  color: #f22;
+}
+
+span.remTime {
+  padding: 15px 15px;
+  color: #fff;
+  background: none;
+  font-size: 30px;
+  font-family: "Handlee", cursive;
+}
+
+@media (min-width: 576px) {
+  #timer-title {
+    font-size: 30px;
+  }
+
+  .timer {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+
+  .counter span {
+    padding: 15px 0 8px 0;
+    font-size: 14px;
+  }
+
+  span.remTime {
+    padding: 15px 0;
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  #timer-title {
+    font-size: 35px;
+  }
+
+  .timer {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+}
+
+@media (min-width: 1300px) {
+  #timer-title {
+    font-size: 45px;
+  }
+
+  .timer {
+    grid-template-columns: repeat(4, minmax(130px, 1fr));
+    grid-column-gap: 50px;
+  }
+
+  .counter::before,
+  .counter::after {
+    width: 7px;
+    height: 13px;
+  }
+
+  .counter span {
+    padding: 20px 0 8px 0;
+    font-size: 15px;
+  }
+
+  span.remTime {
+    padding: 22px 0;
+    font-size: 65px;
+  }
+}
