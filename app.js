@@ -7,7 +7,7 @@ countdown();
 let interval = setInterval(countdown, 1000);
 
 function countdown() {
-  let targetDate = "2021-12-16 00:00:00";
+  let targetDate = "2022-12-16 00:00:00";
   let targetTime = new Date(targetDate);
   let currentTime = new Date().getTime();
   let remainingTime = targetTime - currentTime;
